@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text = "${projectTitle}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{user/css/layout.css}" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="header_container">
+            <div class="logo">
+                <a href="#">
+                    <img src="user/images/logo.png" alt="">
+                </a>
+            </div>
+
+            <div class="thong_tin">
+                <div class="user">
+                    <div>
+                        <img src="user/images/account.png" alt="">
+                    </div>
+                    <div class="register">
+                        <span>Account</span>
+                        <div class="login_register">
+                            <a th:href="@{/login}">Login</a>
+                            |
+                            <a th:href="@{/register}">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                    <a href="./cart.html">
+                        <img src="user/images/giohang.png" alt="">
+                        <span>Cart</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <ul class="menu">
+            <li>
+                <a th:href="@{/home}">Home</a>
+            </li>
+            <li>
+                <a href="">PC</a>
+                <div class="submenu">
+                    <ul>
+                        <li>
+                            <a href="">Fan</a>
+                        </li>
+                        <li>
+                            <a href="">Graphic card</a>
+                        </li>
+                        <li>
+                            <a href="">Mouse</a>
+                        </li>
+                        <li>
+                            <a href="">Keyboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="">Accessories</a>
+                <div class="submenu">
+                    <ul>
+                        <li>
+                            <a href="">Headphones</a>
+                        </li>
+                        <li>
+                            <a href="">Charger</a>
+                        </li>
+                        <li>
+                            <a href="">Power bank</a>
+                        </li>
+                        <li>
+                            <a href="">Microphone</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="">Laptop</a>
+            </li>
+            <li>
+                <a href="">Phone</a>
+            </li>
+            <li>
+                <a href="">About us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="main-search-input-wrap">
+    <div class="main-search-input fl-wrap">
+        <div class="main-search-input-item">
+            <input type="text"  value="" placeholder="Search Products...">
+        </div>                              
+        <button class="main-search-button">Search</button>
+    </div>
+</div>
+
+<div layout:fragment="content"></div>
+
+<div class="footer">
+    <div class="links">
+        <h3>Useful Links</h3>
+        <a href="#">About</a>
+        <a href="#">Career</a>
+        <a href="#">Shop</a>
+        <a href="#">Blog</a>
+    </div>
+    <div class="newsletter">
+        <h3>NEWSLETTER</h3>
+        <form>
+            <input type="email" placeholder="Type your Email here" required>
+            <br>
+            <button type="submit">SUBSCIRBE</button>
+        </form>
+    </div>
+    <div class="contact">
+        <h3>CONTACT US</h3>
+        <p>No.3, block 2, X street<br>Hanoi, Vietnam</p>
+    </div>
+</div>
+<script src="../../static/user/js/jquery-3.7.1.min.js"></script>
+<script th:src="@{user/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{user/layout}">
+<head>
+    <title>Contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" th:href="@{user/css/bootstrap.min.css}">
+
+    <link rel="stylesheet" th:href="@{user/css/contact.css}">
+
+
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="dbox w-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-map-marker"></span>
+                </div>
+                <div class="text">
+                    <p><span>Address:</span> No.3, block 2, X street <br> Hanoi, Vietnam</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dbox w-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-phone"></span>
+                </div>
+                <div class="text">
+                    <p><span>Phone:</span> <a href="tel://1234567920">+84 866 125 142</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dbox w-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-paper-plane"></span>
+                </div>
+                <div class="text">
+                    <p><span>Email:</span> <a href="mailto:info@yoursite.com">buidaihieu2004@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>CONTACT US</h3>
+<!--    <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/contact">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="text" class="form-control" name="name" id="name" placeholder="Name">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="text" class="form-control" name="message" id="message" placeholder="Message">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div th:if="${message}" class="alert alert-success" role="alert">-->
+<!--                <p th:text="${message}"></p>-->
+<!--            </div>-->
+<!--            <button type="submit">Submit</button>-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--    Ajax-->
+    <form method="POST" id="contactForm" name="contactForm" class="contactForm" action="/contact-ajax">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="message" id="message" placeholder="Message">
+                </div>
+            </div>
+            <div th:if="${message}" class="alert alert-success" role="alert">
+                <p th:text="${message}"></p>
+            </div>
+<!--            Khi goi ajax thi type la "button"-->
+            <button type="button" th:onclick="|saveContact()|">Submit</button>
+        </div>
+    </form>
+    <p id="successMessage"></p>
+</div>
+
+</body>
+</html>
+

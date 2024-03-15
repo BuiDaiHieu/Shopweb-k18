@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/layout}">
+<body>
+<div layout:fragment="admin-content">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <h3 class="m-3">Product List</h3>
+            <a class="btn btn-primary m-3" th:href="@{/admin/product/add}">Add</a>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Price Sales</th>
+                <th scope="col">Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.id}"/>
+                <td th:text="${product.title}"/>
+                <td th:text="${product.price}"/>
+                <td th:text="${product.price_sale}"/>
+                <td th:text="${product.category.name}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

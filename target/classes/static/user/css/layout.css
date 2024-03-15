@@ -1,0 +1,242 @@
+body * {
+    font-family: Arial;
+}
+body {
+    margin: 0;
+}
+
+.header {
+    padding: 17px 0;
+    background-color: lightyellow;
+}
+
+.header_container {
+    display: flex;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thong_tin {
+    display: flex;
+}
+
+.user {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.user span {
+    display: block;
+    font-size: 17px;
+}
+
+.register {
+    display: inline-block;
+
+}
+
+.login_register a {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+.cart {
+    display: flex;
+    padding-left: 20px;
+
+}
+.cart > a {
+    text-decoration: none;
+    color: black;
+}
+.cart > a > span {
+    align-self: flex-end;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+nav {
+    background-color: #512625;
+    clear: both;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu {
+    list-style-type: none;
+    /* bỏ padding và margin vì là mặc định của thẻ ul */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* css selector đến phần tử con gần nhất */
+.menu>li {
+    /*
+    block: tạo 1 phần tử html có khung chứa width = 100% cha và set được width, height
+        padding, margin
+        set mỗi phần tử 1 dòng
+    inline: width bằng nội dung chứa, không set được width/height
+    inline-block: gộp của block và inline
+        set được widght,height,margin,padding
+        mỗi phần tử trên cùng 1 dòng
+    */
+    display: inline-block;
+    /*
+        position: tạo phần tử html có tọa độ 2d: top, left, right, bottom
+        tọa độ gốc của phần tử html chính là vị trí hiện tại
+        cha (menu) relative, con (submenu) absolute
+    */
+    position: relative;
+}
+
+.menu>li>a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    /* padding: là khoảng cách từ border đi vào bên trong phần tử */
+    padding: 15px 20px 15px 20px;
+}
+
+/* css selector đến thẻ a có class active */
+.menu>li>a.active {
+    background-color: #e18037;
+}
+
+/* thuộc tính di chuyển chuột vào phần tử */
+.menu>li:hover {
+    background-color: #e18037;
+}
+
+.menu li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu {
+    /*
+        - Nếu phần tử cha không có relative: tọa độ gốc của phần tử là góc trên bên trái
+        màn hình
+        - Nếu phần tử cha có relative: tọa độ gốc của phần tử là vị trí của phần tử cha
+    */
+    position: absolute;
+    top: 49px;
+    left: 0;
+    width: 200px;
+    background-color: white;
+    /*
+        box-shadow: đổ bóng cho phần tử html
+        Apx Bpx Cpx #828282;
+            Apx: đổ bóng sang phải
+            Bpx: đổ bóng xuống dưới
+            Cpx: độ nhòe của bóng
+            #828282: màu của bóng
+        Để đổ bóng xung quanh phần tử -> set A và B = 0
+
+    */
+    box-shadow: 0 0 4px #828282;
+    /* làm trong phần tử: giá trị từ 0 -> 1 (mặc định 1) set 0.5 0.8 */
+    opacity: 0;
+    /* ẩn phần tử */
+    visibility: hidden;
+    /* độ nổi của phần tử html */
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.submenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu ul li a {
+    /* tạo khối cho phần tử html -> set đc wight, height */
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    font-size: 18px;
+    /*
+        border-bottom: đường viền bao quanh phần tử html
+        1px: độ dày của đường viền
+        solid: type của đường viền
+        #ccc: mã màu
+        border-bottom, border-top, border-left, border-right, border
+    */
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu li:hover {
+    background-color: #e18037;
+}
+
+.submenu li:hover a {
+    color: white;
+}
+
+.footer {
+    margin-top: 20px;
+    background: lightyellow;
+    color: #efefef;
+    display: flex;
+    padding: 100px;
+}
+
+.footer div {
+    text-align: center;
+}
+
+.newsletter {
+    flex-grow: 2;
+}
+
+.footer div h3 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.links a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 400px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+form button {
+    background: black;
+    border: 2px solid black;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{user/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text = "${projectTitle}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{user/css/style.css}" type="text/css">
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="banner">
+        <img src="user/images/banner.jpg" alt="" width="100%">
+    </div>
+
+    <div class="category price-filter">
+        <div>Price filter</div>
+        <ul>
+            <li>
+                <input type="checkbox" name="price" id="price_1">
+                <label for="price_1">0 - 100</label>
+            </li>
+            <li>
+                <input type="checkbox" name="price" id="price_2">
+                <label for="price_2">100 - 200</label>
+            </li>
+            <li>
+                <input type="checkbox" name="price" id="price_3">
+                <label for="price_3">200 - 500</label>
+            </li>
+            <li>
+                <input type="checkbox" name="price" id="price_4">
+                <label for="price_4">500 - 1000</label>
+            </li>
+            <li>
+                <input type="checkbox" name="price" id="price_5">
+                <label for="price_5">Above 1000</label>
+            </li>
+        </ul>
+    </div>
+
+    <div class="product">
+        <h2>Best seller</h2>
+        <div class="list-product">
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-product">
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+            <div class="item">
+                <a href="">
+                    <img src="user/images/sanpham1.jpg" alt="">
+                </a>
+                <h3 class="product_name">Product 1</h3>
+                <p>Description 1: This product is the best in the world. It is made by the most expensive materials and by the most skilled craftsmen</p>
+                <h3 class="price">3000,00€</h3>
+                <div class="add">
+                    <button>Add to card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

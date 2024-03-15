@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/layout}">
+<body>
+<div layout:fragment="admin-content">
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Price Sales</th>
+                <th scope="col">Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.id}"/>
+                <td th:text="${product.title}"/>
+                <td th:text="${product.price}"/>
+                <td th:text="${product.price_sale}"/>
+                <td th:text="${product.category.name}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
